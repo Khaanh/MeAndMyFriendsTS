@@ -1,10 +1,25 @@
 const express = require("express");
+const fs = require("fs");
 
 const app = express();
 const PORT = 8800;
 
-app.get("/", (req, res) => {
-	res.send("Hello World!");
+app.use((req, res, next) => {
+	res.setHeader("Access-Control-Allow-Origin", "*");
+	next();
+});
+// ?How to improve ?
+const data = fs.readFileSync(
+	`${__dirname}/data/navigation.json`,
+	(err, data) => {
+		return data;
+	}
+);
+const dataObj = JSON.parse(data);
+
+app.get("/api/navigation", (req, res) => {
+	console.log(dataObj);
+	res.send(dataObj);
 });
 
 app.listen(PORT, () => {
