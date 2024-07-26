@@ -1,18 +1,18 @@
 [
 	{
 		"id": 0,
-		"link": "Me"
+		"linkInfo": "Me"
 	},
 	{
 		"id": 1,
-		"link": "My Friends"
+		"linkInfo": "My Friends"
 	},
 	{
 		"id": 2,
-		"link": "Contact us"
+		"linkInfo": "Contact us"
 	},
 	{
 		"id": 3,
-		"link": "Join our team"
+		"linkInfo": "Join our team"
 	}
 ]

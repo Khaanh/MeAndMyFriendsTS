@@ -8,10 +8,14 @@ app.use((req, res, next) => {
 	res.setHeader("Access-Control-Allow-Origin", "*");
 	next();
 });
+
 // ?How to improve ?
 const data = fs.readFileSync(
 	`${__dirname}/data/navigation.json`,
+	"utf-8",
 	(err, data) => {
+		if (err) throw Error(err);
+
 		return data;
 	}
 );
