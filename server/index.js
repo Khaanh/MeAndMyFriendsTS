@@ -15,16 +15,16 @@ const data = fs.readFileSync(
 	"utf-8",
 	(err, data) => {
 		if (err) throw Error(err);
-
 		return data;
 	}
 );
 const dataObj = JSON.parse(data);
 
 app.get("/api/navigation", (req, res) => {
-	console.log(dataObj);
 	res.send(dataObj);
 });
+
+app.get("/api/");
 
 app.listen(PORT, () => {
 	console.log(`Server running on: http://localhost:${PORT}`);

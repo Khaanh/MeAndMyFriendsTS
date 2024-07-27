@@ -15,6 +15,15 @@ export default function Navigation() {
 		setLink(dataObj);
 	};
 
+	const strToHref = (linkTitle: string): string => {
+		const href = linkTitle
+			.split(" ")
+			.map((el) => el.toLocaleLowerCase())
+			.join("-");
+
+		return href;
+	};
+
 	useEffect(() => {
 		getNavigation(navAPI);
 	}, []);
@@ -24,7 +33,7 @@ export default function Navigation() {
 			{links.map((link) => {
 				return (
 					<li key={link.id}>
-						<a href="test">{link.linkInfo}</a>
+						<a href={strToHref(link.linkInfo)}>{link.linkInfo}</a>
 					</li>
 				);
 			})}
