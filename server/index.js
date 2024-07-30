@@ -1,3 +1,4 @@
+// *TODO* Upper/Lower - Case function for navigation.json (linkInfo)
 const express = require("express");
 const fs = require("fs");
 
@@ -20,11 +21,25 @@ const data = fs.readFileSync(
 );
 const dataObj = JSON.parse(data);
 
+// const navigation = fs.readFileSync(
+// 	`../client/src/components/Navigation.tsx`,
+// 	"utf-8",
+// 	(err, data) => {
+// 		console.log(data);
+// 	}
+// );
+
 app.get("/api/navigation", (req, res) => {
 	res.send(dataObj);
 });
 
-app.get("/api/");
+app.get("/", (req, res) => {
+	res.send("Hello");
+});
+
+app.get("/me", (req, res) => {
+	res.send("Me");
+});
 
 app.listen(PORT, () => {
 	console.log(`Server running on: http://localhost:${PORT}`);

@@ -14,5 +14,9 @@
 	{
 		"id": 3,
 		"linkInfo": "Join our team"
+	},
+	{
+		"id": 4,
+		"linkInfo": "My Portfolio"
 	}
 ]

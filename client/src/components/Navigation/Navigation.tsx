@@ -29,14 +29,18 @@ export default function Navigation() {
 	}, []);
 
 	return (
-		<ul>
-			{links.map((link) => {
-				return (
-					<li key={link.id}>
-						<a href={strToHref(link.linkInfo)}>{link.linkInfo}</a>
-					</li>
-				);
-			})}
-		</ul>
+		<nav className="text-2xl w-3/5 mx-auto">
+			<ul className="flex justify-center">
+				{links.map((link) => {
+					return (
+						<li key={link.id} className="">
+							<a href={strToHref(link.linkInfo)} className="py-2 p-3">
+								{link.linkInfo}
+							</a>
+						</li>
+					);
+				})}
+			</ul>
+		</nav>
 	);
 }
