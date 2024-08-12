@@ -1,6 +1,6 @@
-import Me from "../../img/Me.jpg";
+import Me from "../img/Me.jpg";
 
-export default function MainPage() {
+const Home = () => {
 	return (
 		<>
 			<div className="w-5/12 mx-auto mb-8">
@@ -30,4 +30,5 @@ export default function MainPage() {
 			</div>
 		</>
 	);
-}
+};
+export default Home;
