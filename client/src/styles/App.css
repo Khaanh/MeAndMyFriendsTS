@@ -1,9 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.App {
+:root {
+	--active-link: #e74c3c;
 }
 
 .App-header {
 	padding-top: 20px;
+}
+
+.active {
+	color: var(--active-link);
 }

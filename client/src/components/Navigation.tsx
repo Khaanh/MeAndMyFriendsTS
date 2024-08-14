@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 export default function Navigation() {
 	useEffect(() => {}, []);
@@ -8,11 +8,11 @@ export default function Navigation() {
 		<>
 			<nav className="text-2xl w-3/5 mx-auto mb-10">
 				<ul className="flex justify-center">
-					<Link to={""}>Home</Link>
-					<Link to={"my-friends"}>MyFriends</Link>
-					<Link to={"my-portfolio"}>My Portfolio</Link>
-					<Link to={"join-our-team"}>Join our team</Link>
-					<Link to={"contact-us"}>Contact us</Link>
+					<NavLink to={""}>Home</NavLink>
+					<NavLink to={"my-friends"}>MyFriends</NavLink>
+					<NavLink to={"my-portfolio"}>My Portfolio</NavLink>
+					<NavLink to={"join-our-team"}>Join our team</NavLink>
+					<NavLink to={"contact-us"}>Contact us</NavLink>
 				</ul>
 			</nav>
 
