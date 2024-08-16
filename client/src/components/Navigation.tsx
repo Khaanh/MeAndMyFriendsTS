@@ -1,20 +1,34 @@
-import { useEffect } from "react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
+const setActive = ({ isActive }: any) => (isActive ? "active" : "");
 
 export default function Navigation() {
-	useEffect(() => {}, []);
-
 	return (
 		<>
-			<nav className="text-2xl w-3/5 mx-auto mb-10">
-				<ul className="flex justify-center">
-					<NavLink to={""}>Home</NavLink>
-					<NavLink to={"my-friends"}>MyFriends</NavLink>
-					<NavLink to={"my-portfolio"}>My Portfolio</NavLink>
-					<NavLink to={"join-our-team"}>Join our team</NavLink>
-					<NavLink to={"contact-us"}>Contact us</NavLink>
-				</ul>
-			</nav>
+			<header className="my-7">
+				<nav className="text-2xl w-3/5 mx-auto">
+					<ul className="flex justify-center">
+						<NavLink className={setActive} to={""}>
+							Home
+						</NavLink>
+						<NavLink
+							className="px-3"
+							to={"my-friends"}
+							style={({ isActive }) => ({ color: isActive ? "red" : "white" })}
+						>
+							MyFriends
+						</NavLink>
+						<NavLink className="px-3" to={"my-portfolio"}>
+							My Portfolio
+						</NavLink>
+						<NavLink className="px-3" to={"join-our-team"}>
+							Join our team
+						</NavLink>
+						<NavLink className="px-3" to={"contact-us"}>
+							Contact us
+						</NavLink>
+					</ul>
+				</nav>
+			</header>
 
 			<main className="container mx-auto">
 				<Outlet />

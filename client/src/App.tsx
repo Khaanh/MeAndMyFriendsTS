@@ -13,19 +13,18 @@ import NotFoundPage from "./components/pages/NotFoundPage";
 function App() {
 	return (
 		<div className="App">
-			<header>
-				<Routes>
-					<Route path="/" element={<Navigation />}>
-						<Route index element={<Home />} />
-						<Route path="my-friends" element={<MyFriends />} />
-						<Route path="my-portfolio" element={<MyPortfolio />} />
-						<Route path="join-our-team" element={<JoinOurTeam />} />
-						<Route path="contact-us" element={<ContactUs />} />
-						<Route path="*" element={<NotFoundPage />} />
-					</Route>
-				</Routes>
-			</header>
-			<Outlet />
+			{/* <header className="my-6"> */}
+			<Routes>
+				<Route path="/" element={<Navigation />}>
+					<Route index element={<Home />} />
+					<Route path="my-friends" element={<MyFriends />} />
+					<Route path="my-portfolio" element={<MyPortfolio />} />
+					<Route path="join-our-team" element={<JoinOurTeam />} />
+					<Route path="contact-us" element={<ContactUs />} />
+					<Route path="*" element={<NotFoundPage />} />
+				</Route>
+			</Routes>
+			{/* </header> */}
 		</div>
 	);
 }
