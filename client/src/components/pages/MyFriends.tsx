@@ -1,6 +1,17 @@
+import { useState } from "react";
 import myFriends01 from "../../img/myfriends-01.jpg";
+const url = "http://localhost:8800/api/v1/friendsdata";
 
 const MyFriends = () => {
+	const [data, setData] = useState([]);
+
+	const getData = async (url: string) => {
+		let obj = await fetch(url);
+		let resp = await JSON.parse(obj);
+
+		setData(resp);
+	};
+
 	return (
 		<div className="grid grid-cols-3 gap-x-4 gap-y-14">
 			<div>
