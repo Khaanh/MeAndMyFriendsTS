@@ -1,4 +1,4 @@
-// *TODO* Upper/Lower - Case function for navigation.json (linkInfo)
+const { log } = require("console");
 const express = require("express");
 const fs = require("fs");
 
@@ -10,35 +10,16 @@ app.use((req, res, next) => {
 	next();
 });
 
-// ?How to improve ?
 const data = fs.readFileSync(
-	`${__dirname}/data/navigation.json`,
-	"utf-8",
-	(err, data) => {
-		if (err) throw Error(err);
-		return data;
-	}
+	`${__dirname}/data/my-friends/friendsData.json`,
+	"utf-8"
 );
-const dataObj = JSON.parse(data);
 
-// const navigation = fs.readFileSync(
-// 	`../client/src/components/Navigation.tsx`,
-// 	"utf-8",
-// 	(err, data) => {
-// 		console.log(data);
-// 	}
-// );
-
-app.get("/api/navigation", (req, res) => {
-	res.send(dataObj);
-});
-
-app.get("/", (req, res) => {
-	res.send("Hello");
-});
-
-app.get("/me", (req, res) => {
-	res.send("Me");
+app.use("/api/v1/friends", (req, res) => {
+	res.status(200).send({
+		data: JSON.parse(data),
+	});
+	res.end();
 });
 
 app.listen(PORT, () => {
