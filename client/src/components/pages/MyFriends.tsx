@@ -6,27 +6,23 @@ interface IFriendsModel {
 	id: number;
 	name: string;
 	biography: string;
-	[socialMedia: string]: any;
+	image: string;
 }
 
 const MyFriends = () => {
-	const [friends, setFriends] = useState<IFriendsModel[]>([]);
+	const [friends, setFriends] = useState();
 
 	useEffect(() => {
-		const getData = async () => {
-			let resp = await fetch(url);
-			let objData = await resp.json();
-
-			return setFriends(objData);
-		};
-		getData();
+		fetch(url)
+			.then((response) => response.json())
+			.then((data) => setFriends(data));
 	}, []);
-
-	// console.log("friend: ", friends);
 
 	return (
 		<div>
-			<h1>h1</h1>
+			{friends.map((item: any) => (
+				<p>{item.id}</p>
+			))}
 		</div>
 	);
 	// <div className="grid grid-cols-3 gap-x-4 gap-y-14">
